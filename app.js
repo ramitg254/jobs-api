@@ -39,6 +39,9 @@ app.use('/api/v1/jobs',authenticateUser,jobsRouter)
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
+app.get('/',(req,res)=>{
+  res.status(StatusCodes.OK).send('hello world')
+})
 
 const port = process.env.PORT || 3000;
 
